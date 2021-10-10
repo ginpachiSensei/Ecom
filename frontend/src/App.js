@@ -2,16 +2,24 @@ import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <Header />
       <Container className="py-3">
-        <HomeScreen />
+        {/* <HomeScreen /> */}
+        <Switch>
+        <Route path="/" exact><HomeScreen /></Route>
+        <Route path="/product/:id"><ProductScreen /></Route>
+        </Switch>
       </Container>
       <Footer />
     </div>
+    </BrowserRouter>
   );
 }
 
