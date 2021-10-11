@@ -1,0 +1,27 @@
+{
+  "name": "ecom",
+  "version": "1.0.0",
+  "description": "ecommerce website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginpachiSensei/Ecom.git"
+  },
+  "keywords": [],
+  "author": "satyam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ginpachiSensei/Ecom/issues"
+  },
+  "homepage": "https://github.com/ginpachiSensei/Ecom#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
