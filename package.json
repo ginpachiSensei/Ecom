@@ -4,8 +4,9 @@
   "description": "ecommerce website",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server"
+    "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,11 @@
   },
   "homepage": "https://github.com/ginpachiSensei/Ecom#readme",
   "dependencies": {
+    "axios": "^0.22.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "concurrently": "^6.3.0",
     "nodemon": "^2.0.13"
   }
 }
