@@ -8,11 +8,11 @@ import Loader from "../components/Loader";
 import Messege from "../components/Message";
 
 const ProductScreen = () => {
-  const [qty, setQty] = useState(0)
+  const [qty, setQty] = useState(1)
 
   const params = useParams();
-  let history = useHistory()
-  const dispatch = useDispatch()
+  let history = useHistory();
+  const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails)
   const { loading, error, product } = productDetails
