@@ -3,20 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import { listProducts } from '../actions/productActions'
+import Loader from '../components/Loader';
+import Messege from '../components/Messege';
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
 
-  // const fetchProducts = async () => {
-  //   const res = await axios.get('/api/products')
-  //   setProducts(res.data)
-  // }
   const productList = useSelector((state) => state.productList)
   const { loading, error, products } = productList
 
-  // useEffect(() => {
-  //   fetchProducts()
-  // }, [])
   useEffect(() => {
     dispatch(listProducts())
   }, [dispatch])
@@ -25,9 +20,10 @@ const HomeScreen = () => {
     <>
       <h1>Latest Products</h1>
       {loading ? (
-        <h2>Loading...</h2>
+        // <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+        <Messege variant='danger'>{error}</Messege>
       ) : (
         <Row>
           {products.map((product) => (
