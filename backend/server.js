@@ -9,14 +9,18 @@ dotenv.config()
 const app = express()
 connectDB()
 
+app.use(express.json())
+
 app.get('/' , (req,res) =>{
     res.send("api is running")
 })
+
 
 app.use('/api/products', productRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
+
 
 const PORT = process.env.PORT || 5000
 
