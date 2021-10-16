@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import { listProducts } from '../actions/productActions'
 import Loader from '../components/Loader';
-import Messege from '../components/Messege';
+import Message from '../components/Message';
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
@@ -23,7 +23,7 @@ const HomeScreen = () => {
         // <h2>Loading...</h2>
         <Loader />
       ) : error ? (
-        <Messege variant='danger'>{error}</Messege>
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {products.map((product) => (
