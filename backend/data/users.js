@@ -1,7 +1,7 @@
 //TODO think of user data and password hashing 
 import bcrypt from 'bcryptjs';
 
-const users = [
+const Users = [
     {
         name: 'Admin User',
         email: 'admin@example.com',
@@ -20,4 +20,4 @@ const users = [
     },
 ]
 
-export default users
+export default Users
