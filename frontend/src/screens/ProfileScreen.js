@@ -15,6 +15,7 @@ function ProfileScreen() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(null)
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [updateMenu, setUpdateMenu] = useState(false)
 
   const userDetails = useSelector((state) => state.userDetails)
   const { loading, error, user } = userDetails
@@ -45,16 +46,24 @@ function ProfileScreen() {
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }));
     }
+    setUpdateMenu(false)
+  };
+
+  const updateMenuHandler = (e) => {
+    setUpdateMenu(!updateMenu)
   };
 
   return (
     <Row>
       <Col md={3}>
-        <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
         {success && <Message variant="success">Profile Updated</Message>}
         {loading && <Loader />}
+        <div>
+          <h2>{name}</h2>
+        </div>
+        {updateMenu ?(        
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
@@ -99,7 +108,10 @@ function ProfileScreen() {
           <Button type="submit" variant="primary">
             Update
           </Button>
-        </Form>
+          <Button onClick={updateMenuHandler} variant="primary">
+            Cancel
+          </Button>
+        </Form> ):(<Button onClick={updateMenuHandler} variant="primary">update profile</Button>)}
       </Col>
       <Col md={9}>
         <h2>My Orders</h2>
