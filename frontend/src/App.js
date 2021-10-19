@@ -7,6 +7,7 @@ import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
 import LoginScreen from './screens/LoginScreen';
 import UserRegister from './screens/UserRegister';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/cart/:id?"><CartScreen /></Route>
         <Route path="/login"><LoginScreen /></Route>
         <Route path="/register"><UserRegister /></Route>
+        <Route path="/profile"><ProfileScreen /></Route>
         </Switch>
       </Container>
       <Footer />
