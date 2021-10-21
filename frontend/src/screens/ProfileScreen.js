@@ -61,7 +61,7 @@ function ProfileScreen() {
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
         {success && <Message variant="success">Profile Updated</Message>}
-        {loading && <Loader />}
+        {/* {loading && <Loader />} */}
         <div>
           <h2>{userInfo.name}</h2>
         </div>

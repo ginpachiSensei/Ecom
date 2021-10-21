@@ -6,7 +6,7 @@ import { saveShippingAddress } from '../actions/cartActions'
 import { useHistory } from 'react-router'
 
 const ShippingScreen = () => {
-    let history = useHistory()
+  let history = useHistory()
   const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart
 
