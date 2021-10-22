@@ -23,7 +23,7 @@ function Product(props) {
             text={`${props.product.numReviews} reviews`}
           />
         </Card.Text>
-        <Card.Text as='h3'>${props.product.price}</Card.Text>
+        <Card.Text as='h3'>₹{props.product.price}</Card.Text>
       </Card.Body>
     </Card>
   );
