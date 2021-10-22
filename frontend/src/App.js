@@ -9,6 +9,8 @@ import LoginScreen from './screens/LoginScreen';
 import UserRegister from './screens/UserRegister';
 import ProfileScreen from './screens/ProfileScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/register"><UserRegister /></Route>
         <Route path="/profile"><ProfileScreen /></Route>
         <Route path="/shipping"><ShippingScreen /></Route>
+        <Route path="/payment"><PaymentScreen /></Route>
+        <Route path="/placeOrder"><PlaceOrderScreen /></Route>
         </Switch>
       </Container>
       <Footer />

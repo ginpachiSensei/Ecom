@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
-import Loader from "../components/Loader";
+// import Loader from "../components/Loader";
 import {getUserDetails, updateUserProfile } from "../actions/userActions";
 import { useHistory } from "react-router";
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
@@ -19,7 +19,8 @@ function ProfileScreen() {
   const [updateMenu, setUpdateMenu] = useState(false)
 
   const userDetails = useSelector((state) => state.userDetails)
-  const { loading, error, user } = userDetails
+  // const { loading, error, user } = userDetails
+  const { error, user } = userDetails
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
