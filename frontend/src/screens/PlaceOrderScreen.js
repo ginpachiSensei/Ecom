@@ -1,21 +1,21 @@
-import React, { useEffect } from "react";
-import { Button, Col, Row, ListGroup, Image, Card } from "react-bootstrap";
-import CheckoutSteps from "../components/CheckoutSteps";
-import { useDispatch, useSelector } from "react-redux";
-import Message from "../components/Message";
-import { Link, useHistory } from "react-router-dom";
-import { createOrder} from '../actions/orderActions'
+import React, { useEffect } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import Message from '../components/Message'
+import CheckoutSteps from '../components/CheckoutSteps'
+import { createOrder } from '../actions/orderActions'
 
-function PlaceOrderScreen() {
+const PlaceOrderScreen = () => {
+  let history = useHistory()
   const dispatch = useDispatch()
-  const history = useHistory()
 
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart)
+
   cart.itemsPrice = cart.cartItems.reduce(
     (acc, item) => acc + item.price * item.qty,
     0
   );
-
   cart.shippingPrice = cart.itemsPrice > 5000 ? 0 : 100;
   cart.totalPrice = Number(cart.itemsPrice) + Number(cart.shippingPrice);
 
@@ -40,19 +40,20 @@ function PlaceOrderScreen() {
         totalPrice: cart.totalPrice,
       })
     )
-  };
+  }
+
   return (
     <>
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>
-          <ListGroup variant="flush">
+          <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
                 <strong>Address:</strong>
-                {cart.shippingAddress.address}, {cart.shippingAddress.city}{" "}
-                {cart.shippingAddress.postalCode},{" "}
+                {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
+                {cart.shippingAddress.postalCode},{' '}
                 {cart.shippingAddress.country}
               </p>
             </ListGroup.Item>
@@ -68,7 +69,7 @@ function PlaceOrderScreen() {
               {cart.cartItems.length === 0 ? (
                 <Message>Your cart is empty</Message>
               ) : (
-                <ListGroup variant="flush">
+                <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
@@ -86,7 +87,7 @@ function PlaceOrderScreen() {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -98,26 +99,26 @@ function PlaceOrderScreen() {
         </Col>
         <Col md={4}>
           <Card>
-            <ListGroup variant="flush">
+            <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h2>Order Summary</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>₹{cart.itemsPrice}</Col>
+                  <Col>${cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>₹{cart.shippingPrice}</Col>
+                  <Col>${cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>₹{cart.totalPrice}</Col>
+                  <Col>${cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
@@ -125,8 +126,8 @@ function PlaceOrderScreen() {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button
-                  type="button"
-                  className="btn-block"
+                  type='button'
+                  className='btn-block'
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
                 >
@@ -138,7 +139,7 @@ function PlaceOrderScreen() {
         </Col>
       </Row>
     </>
-  );
+  )
 }
 
-export default PlaceOrderScreen;
+export default PlaceOrderScreen
