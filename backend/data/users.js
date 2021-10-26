@@ -1,4 +1,3 @@
-//TODO think of user data and password hashing 
 import bcrypt from 'bcryptjs';
 
 const Users = [
