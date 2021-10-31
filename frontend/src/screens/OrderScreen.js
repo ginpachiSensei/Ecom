@@ -10,7 +10,7 @@ import Loader from '../components/Loader'
 import { getOrderDetails, payOrder } from '../actions/orderActions'
 import { ORDER_PAY_RESET } from '../constants/orderConstants'
 
-const OrderScreen = ({ match }) => {
+function OrderScreen (){
   const params = useParams()
   const orderId = params.id
 

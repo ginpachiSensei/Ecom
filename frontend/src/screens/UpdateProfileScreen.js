@@ -7,7 +7,7 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { login } from "../actions/userActions";
 
-const LoginScreen = () => {
+function LoginScreen () {
   let history = useHistory();
   let location = useLocation();
   const [email, setEmail] = useState("");

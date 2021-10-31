@@ -6,7 +6,7 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import { savePaymentMethod } from '../actions/cartActions'
 import { useHistory } from 'react-router-dom'
 
-const PaymentScreen = () => {
+function PaymentScreen () {
   let history = useHistory()
   const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart

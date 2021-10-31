@@ -7,7 +7,7 @@ import { listProductDetails } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Messege from "../components/Message";
 
-const ProductScreen = () => {
+function ProductScreen() {
   const params = useParams();
   let history = useHistory();
   const dispatch = useDispatch();

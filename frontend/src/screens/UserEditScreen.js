@@ -8,7 +8,7 @@ import FormContainer from "../components/FormContainer";
 import { getUserDetails, updateUser } from "../actions/userActions";
 import { USER_UPDATE_RESET } from "../constants/userConstants";
 
-const UserEditScreen = () => {
+function UserEditScreen() {
   const params = useParams();
   const history = useHistory();
   const userId = params.id;

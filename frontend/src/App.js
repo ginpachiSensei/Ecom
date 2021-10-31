@@ -14,6 +14,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import UserListScreen from './screens/UserListScreen'
 import UserEditScreen from './screens/UserEditScreen'
+import ProductListScreen from './screens/ProductListScreen'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/Order/:id"><OrderScreen /></Route>
         <Route path="/admin/userlist"><UserListScreen /></Route>
         <Route path="/admin/user/:id/edit"><UserEditScreen /></Route>
+        <Route path="/admin/productList"><ProductListScreen /></Route>
         </Switch>
       </Container>
       <Footer />
