@@ -194,7 +194,9 @@ function OrderScreen() {
                       onSuccess={successPaymentHandler}
                     />
                   )}
-                  {loadingDeliver && <Loader />}
+                </ListGroup.Item>
+              )}
+              {loadingDeliver && <Loader />}
                   {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                     <ListGroup.Item>
                       <Button
@@ -206,8 +208,6 @@ function OrderScreen() {
                       </Button>
                     </ListGroup.Item>
                   )}
-                </ListGroup.Item>
-              )}
             </ListGroup>
           </Card>
         </Col>
