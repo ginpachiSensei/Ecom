@@ -27,6 +27,8 @@ function App() {
         {/* <HomeScreen /> */}
         <Switch>
         <Route path="/" exact><HomeScreen /></Route>
+        {/* TODO fix search bar  */}
+        <Route path="/serch/:keyword" exact><HomeScreen /></Route>
         <Route path="/product/:id"><ProductScreen /></Route>
         <Route path="/cart/:id?"><CartScreen /></Route>
         <Route path="/login"><LoginScreen /></Route>
