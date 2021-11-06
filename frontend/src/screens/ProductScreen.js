@@ -16,6 +16,7 @@ import Loader from "../components/Loader";
 import Messege from "../components/Message";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
 import Message from "../components/Message";
+import Meta from "../constants/Meta";
 
 function ProductScreen() {
   const params = useParams();
@@ -49,6 +50,7 @@ function ProductScreen() {
     dispatch(listProductDetails(params.id));
   }, [dispatch, params, successProductReview]);
 
+  // TODO reviews while submitting gives error do something about it 
   const submitHandler = (e) => {
     e.preventDefault()
     dispatch(
@@ -70,6 +72,7 @@ function ProductScreen() {
         <Messege variant="danger">{error}</Messege>
       ) : (
         <>
+        <Meta title={product.name} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
