@@ -27,8 +27,9 @@ function App() {
         {/* <HomeScreen /> */}
         <Switch>
         <Route path="/" exact><HomeScreen /></Route>
-        {/* TODO fix search bar  */}
-        <Route path="/serch/:keyword" exact><HomeScreen /></Route>
+        <Route path="/search/:keyword" exact><HomeScreen/></Route>
+        <Route path='/page/:pageNumber' exact><HomeScreen/></Route>
+        <Route path='/search/:keyword/page/:pageNumber' exact><HomeScreen/></Route>
         <Route path="/product/:id"><ProductScreen /></Route>
         <Route path="/cart/:id?"><CartScreen /></Route>
         <Route path="/login"><LoginScreen /></Route>
@@ -40,7 +41,8 @@ function App() {
         <Route path="/Order/:id"><OrderScreen /></Route>
         <Route path="/admin/userlist"><UserListScreen /></Route>
         <Route path="/admin/user/:id/edit"><UserEditScreen /></Route>
-        <Route path="/admin/productList"><ProductListScreen /></Route>
+        <Route path='/admin/productlist' exact><ProductListScreen/></Route>
+        <Route path="/admin/productlist/:pageNumber" exact><ProductListScreen/></Route>
         <Route path="/admin/product/:id/edit"><ProductEditScreen /></Route>
         <Route path="/admin/orderList"><OrderListScreen /></Route>
         </Switch>
