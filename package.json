@@ -5,7 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run server\" \"npm run react\"",
+    "start": "node backend/server",
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run react\"",
     "server": "nodemon backend/server",
     "react": "npm start --prefix frontend",
     "data:import": "node backend/seeder",
