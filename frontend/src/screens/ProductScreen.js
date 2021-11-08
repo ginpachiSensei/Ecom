@@ -16,7 +16,7 @@ import Loader from "../components/Loader";
 import Messege from "../components/Message";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
 import Message from "../components/Message";
-import Meta from "../constants/Meta";
+import Meta from "../components/Meta";
 
 function ProductScreen() {
   const params = useParams();
